@@ -20,8 +20,8 @@ function App() {
   return (
     <ThemeProvider theme={themes[theme]}>
       {/* <Header toggleThemeFunc={toggleTheme} /> */}
-      <HeroCard social="facebook" user="@nathanf" value={1987} text="Followers" delta={12} />
-      
+      {/* <HeroCard social="facebook" user="@nathanf" value={1987} text="Followers" delta={12} /> */}
+      <StatCard text="Page Views" social="facebook" value={87} delta={3} />
     </ThemeProvider>
   );
 }

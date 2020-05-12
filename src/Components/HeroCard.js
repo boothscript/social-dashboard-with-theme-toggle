@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import Delta from "./Delta"
+
 const Div = styled.div`
     width: 350px;
     background: ${props => props.theme.cardBg};
@@ -50,21 +52,11 @@ const Text = styled.p`
     color: ${props => props.theme.textLight};
 
 `
-const Delta = styled.p`
-    font-weight: 700;
-    font-size: .85rem;
-    color: ${({theme, color}) => theme[color]};
-    margin-bottom:0;
-    margin-left: .4em;
-`
+
 
 function HeroCard({social, user, value, text, delta}){
 
-    function createDelta(){
-        const text = `${Math.abs(delta)} Today`
-        const color = delta > 0 ? "green" : "red"
-        return [<img src={`images/icon-arrow-${color}.svg`} />, <Delta color={color}>{text}</Delta>]
-    }
+    
 
 return (
     <Div social={social}>
@@ -77,7 +69,7 @@ return (
             <Text >{text}</Text>
         </Main>
         <Footer>
-            {createDelta(delta)}
+            <Delta delta={delta} suffix="Today" />
         </Footer>
     </Div>
 )
