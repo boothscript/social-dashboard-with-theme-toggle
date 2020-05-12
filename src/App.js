@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {ThemeProvider} from "styled-components"
 import './App.css';
 
+import themes from "./Theme"
+import Header from "./Components/Header"
+import HeroCard from "./Components/HeroCard"
+import StatCard from "./Components/StatCard"
+import HeroStats from "./Containers/HeroStats"
+import Stats from "./Containers/Stats"
+
 function App() {
+
+  const [theme, setTheme] = useState("light")
+
+  function toggleTheme(){
+    setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themes[theme]}>
+      {/* <Header toggleThemeFunc={toggleTheme} /> */}
+      <HeroCard social="facebook" user="@nathanf" value={1987} text="Followers" delta={12} />
+      
+    </ThemeProvider>
   );
 }
 
