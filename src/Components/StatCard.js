@@ -10,7 +10,6 @@ const Grid = styled.div`
     padding: 1.3em 1.7em;
     border-radius: 6px;
     height: 100px;
-    width:275px;
 
 `
 const Text = styled.p`
@@ -46,11 +45,11 @@ const DeltaWrapper = styled.div`
 
 `
 
-function StatCard({text, social, value, delta}){
+function StatCard({statName, social, value, delta}){
 
     return(
         <Grid>
-            <Text>{text}</Text>
+            <Text>{statName}</Text>
             <Icon src={`images/icon-${social}.svg`} alt=""/>
             <Metric >{value}</Metric>
             <DeltaWrapper>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ThemeProvider} from "styled-components"
+import styled, {ThemeProvider} from "styled-components"
 import './App.css';
 
 import themes from "./Theme"
@@ -9,7 +9,10 @@ import StatCard from "./Components/StatCard"
 import HeroStats from "./Containers/HeroStats"
 import Stats from "./Containers/Stats"
 
+import {followTotal, heroStats, stats} from "./Data/data"
+
 function App() {
+
 
   const [theme, setTheme] = useState("light")
 
@@ -17,11 +20,17 @@ function App() {
     setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
   }
 
+  const Grid = styled.div`
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) max(325px) minmax(1em, 1fr);
+  `
+
   return (
     <ThemeProvider theme={themes[theme]}>
-      {/* <Header toggleThemeFunc={toggleTheme} /> */}
-      {/* <HeroCard social="facebook" user="@nathanf" value={1987} text="Followers" delta={12} /> */}
-      <StatCard text="Page Views" social="facebook" value={87} delta={3} />
+      <Grid>
+      <HeroStats cardData={heroStats} />
+      <Stats cardData={stats} />
+      </Grid>
     </ThemeProvider>
   );
 }

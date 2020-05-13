@@ -4,15 +4,22 @@ import styled from "styled-components"
 import Delta from "./Delta"
 
 const Div = styled.div`
-    width: 350px;
+    
     background: ${props => props.theme.cardBg};
-    border-top: 6px solid ${({theme, social}) => theme[social]};
-    border-radius: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 250px;
+    height: 200px;
+    border-radius: 0 0 6px 6px;
+    &::before{
+        content: "";
+        display:block;
+        height: 6px;
+        width: 100%;
+        background: ${({theme, social}) => theme[social]};
+        border-radius: 6px 6px 0 0;
+    }
 `
 const Header = styled.div`
     display: flex;
@@ -54,7 +61,7 @@ const Text = styled.p`
 `
 
 
-function HeroCard({social, user, value, text, delta}){
+function HeroCard({social, username, value, text, delta}){
 
     
 
@@ -62,7 +69,7 @@ return (
     <Div social={social}>
         <Header>
             <Logo src={`images/icon-${social}.svg`} alt="facebook"/>
-            <User>{user}</User>
+            <User>{username}</User>
         </Header>
         <Main>
             <Metric>{value}</Metric>
