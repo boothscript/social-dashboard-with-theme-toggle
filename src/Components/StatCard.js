@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import Delta from "./Delta"
+import statHelper from "../helpers/statHelper"
 
 const Grid = styled.div`
     background: ${props => props.theme.cardBg};
@@ -51,7 +52,7 @@ function StatCard({statName, social, value, delta}){
         <Grid>
             <Text>{statName}</Text>
             <Icon src={`images/icon-${social}.svg`} alt=""/>
-            <Metric >{value}</Metric>
+            <Metric >{statHelper(value)}</Metric>
             <DeltaWrapper>
                 <Delta delta={delta} suffix="%" />
             </DeltaWrapper>

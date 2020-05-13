@@ -8,8 +8,14 @@ grid-column: 2/-2;
 display: grid;
 max-width: 1200px;
 grid-gap: 20px;
-margin-bottom: 20px;
+margin-bottom:3em;
 
+@media (min-width: 500px){
+    grid-template-columns: repeat(2, 1fr)
+}
+@media (min-width: 1000px){
+    grid-template-columns: repeat(4, 1fr)
+}
 `
 
 function HeroStats({cardData}){

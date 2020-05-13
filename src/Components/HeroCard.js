@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import statHelper from "../helpers/statHelper"
 import Delta from "./Delta"
 
 const Div = styled.div`
@@ -12,13 +13,19 @@ const Div = styled.div`
     text-align: center;
     height: 200px;
     border-radius: 0 0 6px 6px;
+    margin-top: 6px;
+    position: relative;
+    
     &::before{
         content: "";
         display:block;
+        position: absolute;
         height: 6px;
         width: 100%;
         background: ${({theme, social}) => theme[social]};
         border-radius: 6px 6px 0 0;
+        top: -6px;
+        
     }
 `
 const Header = styled.div`
@@ -72,7 +79,7 @@ return (
             <User>{username}</User>
         </Header>
         <Main>
-            <Metric>{value}</Metric>
+            <Metric>{statHelper(value)}</Metric>
             <Text >{text}</Text>
         </Main>
         <Footer>

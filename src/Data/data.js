@@ -26,7 +26,7 @@
             social: "youtube",
             username: "Nathan F.",
             value: 8239,
-            delta: 144,
+            delta: -144,
             text: "Subscribers"
         }
     ]
@@ -42,7 +42,7 @@
             social: "facebook",
             statName: "Likes",
             value: 52,
-            delta: 2,
+            delta: -2,
             
         },
         {
@@ -75,13 +75,13 @@
             social: "youtube",
             statName: "Likes",
             value: 107,
-            delta: 19
+            delta: -19
     },
        {
             social: "youtube",
             statName: "Total Views",
             value: 1407,
-            delta: 12
+            delta: -12
         }
     ]
 export {followTotal, heroStats, stats}

@@ -10,6 +10,18 @@ import HeroStats from "./Containers/HeroStats"
 import Stats from "./Containers/Stats"
 
 import {followTotal, heroStats, stats} from "./Data/data"
+const Grid = styled.div`
+display: grid;
+grid-template-columns: minmax(1em, 1fr) max(325px) minmax(1em, 1fr);
+background: ${props => props.theme.background};
+
+@media(min-width: 500px){
+  grid-template-columns: minmax(1em, 1fr) max(500px) minmax(1em, 1fr);
+}
+@media(min-width: 1000px){
+  grid-template-columns: minmax(1em, 1fr) max(1000px) minmax(1em, 1fr);
+}
+`
 
 function App() {
 
@@ -20,14 +32,12 @@ function App() {
     setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
   }
 
-  const Grid = styled.div`
-    display: grid;
-    grid-template-columns: minmax(1em, 1fr) max(325px) minmax(1em, 1fr);
-  `
+
 
   return (
     <ThemeProvider theme={themes[theme]}>
       <Grid>
+        <Header followStat={followTotal} toggleFunc={toggleTheme} toggleState={theme}/>
       <HeroStats cardData={heroStats} />
       <Stats cardData={stats} />
       </Grid>
