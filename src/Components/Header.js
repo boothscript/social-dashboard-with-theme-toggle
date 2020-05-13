@@ -5,7 +5,7 @@ const Div = styled.div`
     grid-column: 2/-2;
     display:flex;
     flex-direction: column;
-    @media(min-width: 1000px){
+    @media(min-width: ${props => props.theme.tablet2}){
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 2em;
@@ -14,7 +14,7 @@ const Div = styled.div`
     const TitleWrap = styled.div`
         padding-top: 2em;
         border-bottom: 1px solid ${props => props.theme.textLight};
-        @media(min-width: 1000px){
+        @media(min-width: ${props => props.theme.tablet2}){
             border-bottom: none;
         }
     `

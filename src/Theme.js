@@ -9,6 +9,11 @@ const globalThemes = {
 
     // typography
     font: "'Inter', sans-serif",
+
+    // break-points
+    tablet: "520px",
+    tablet2: "900px",
+    desktop: "1100px"
 }
 
 const dark = {
