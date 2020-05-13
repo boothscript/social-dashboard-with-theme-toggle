@@ -27,6 +27,10 @@ const Div = styled.div`
         top: -6px;
         
     }
+    &:hover{
+        background: ${props => props.theme.cardBgHover};
+    }
+
 `
 const Header = styled.div`
     display: flex;

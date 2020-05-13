@@ -11,6 +11,9 @@ const Grid = styled.div`
     padding: 1.3em 1.7em;
     border-radius: 6px;
     height: 100px;
+    &:hover{
+        background: ${props => props.theme.cardBgHover};
+    }
 
 `
 const Text = styled.p`
