@@ -1,6 +1,6 @@
 # Social Dashboard with Theme Toggle
 
-![A dashboard built with React and styled components.](./design/desktop-preview.jpg)
+![A dashboard built with React and styled components.](https://github.com/boothscript/social-dashboard-with-theme-toggle/blob/master/src/design/desktop-preview.jpg?raw=true)
 
 
 [Hosted here (http)](http://88.80.191.153:3999)
