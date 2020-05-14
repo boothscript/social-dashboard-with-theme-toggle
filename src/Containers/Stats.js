@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import StatCard from "../Components/StatCard"
-import {Grid} from "./Shared/Grid"
+import {Grid} from "./Grid.styled"
 
 const Header = styled.h3`
 color: ${props => props.theme.textLight};
