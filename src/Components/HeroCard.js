@@ -29,6 +29,7 @@ const Div = styled.div`
     }
     &:hover{
         background: ${props => props.theme.cardBgHover};
+        cursor: pointer;
     }
 
 `

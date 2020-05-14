@@ -13,6 +13,7 @@ const Grid = styled.div`
     height: 100px;
     &:hover{
         background: ${props => props.theme.cardBgHover};
+        cursor: pointer;
     }
 
 `
