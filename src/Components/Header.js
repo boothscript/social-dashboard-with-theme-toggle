@@ -1,10 +1,26 @@
-import React, {useState, useEffect} from "react"
+import React  from "react"
 import styled from "styled-components"
 
 const Div = styled.div`
     grid-column: 2/-2;
     display:flex;
     flex-direction: column;
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 265px;
+        background: ${props => props.theme.topBgPattern};
+        border-radius: 0 0 16px 16px;
+        top: 0;
+        left: 0;
+        @media(min-width:${props => props.theme.tablet2}){
+            height: 200px;
+        }
+    }
+
     @media(min-width: ${props => props.theme.tablet2}){
         flex-direction: row;
         justify-content: space-between;
@@ -17,6 +33,7 @@ const Div = styled.div`
         @media(min-width: ${props => props.theme.tablet2}){
             border-bottom: none;
         }
+        z-index: 10
     `
     const Title = styled.h2`
         color: ${props => props.theme.textDark};
@@ -34,6 +51,7 @@ const Div = styled.div`
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: 2em;
+        z-index: 10;
     `
     const Label = styled.label`
         color: ${props => props.theme.textLight};
