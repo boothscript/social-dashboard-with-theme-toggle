@@ -36,6 +36,10 @@ Header.propTypes = {
   followStat: PropTypes.string.isRequired,
   toggleState: PropTypes.string.isRequired,
   toggleFunc: PropTypes.func.isRequired,
+  toggleTypes: PropTypes.shape({
+    DARK: PropTypes.string.isRequired,
+    LIGHT: PropTypes.string.isRequired,
+  }),
 };
 
 export default Header;
