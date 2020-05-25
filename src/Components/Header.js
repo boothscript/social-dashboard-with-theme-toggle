@@ -10,12 +10,14 @@ import {
   ThemeSwitch,
 } from "./Header.styled";
 
+import SpanSpinner from "./SpanSpinner";
+
 function Header({ followStat, toggleState, toggleFunc, toggleTypes }) {
   return (
     <Div>
       <TitleWrap>
         <Title>Social Media Dashboard</Title>
-        <SubTitle>Total Followers: {followStat}</SubTitle>
+        <SubTitle>Total Followers: {followStat || <SpanSpinner />}</SubTitle>
       </TitleWrap>
       <ToggleThemeWrap>
         <Label>Dark Mode</Label>
@@ -33,7 +35,7 @@ function Header({ followStat, toggleState, toggleFunc, toggleTypes }) {
 }
 
 Header.propTypes = {
-  followStat: PropTypes.string.isRequired,
+  followStat: PropTypes.string,
   toggleState: PropTypes.string.isRequired,
   toggleFunc: PropTypes.func.isRequired,
   toggleTypes: PropTypes.shape({

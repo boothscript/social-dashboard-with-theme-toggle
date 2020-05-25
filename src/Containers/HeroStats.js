@@ -3,20 +3,30 @@ import PropTypes from "prop-types";
 
 import HeroCard from "../Components/HeroCard";
 import { Grid } from "./Grid.styled";
+import SpanSpinner, { SpinnerWrapper } from "../Components/SpanSpinner";
 
 function HeroStats({ cardData }) {
   return (
     <Grid>
-      {cardData.map((cardObj) => (
-        <HeroCard
-          key={cardObj.value}
-          social={cardObj.social}
-          username={cardObj.username}
-          value={cardObj.value}
-          delta={cardObj.delta}
-          text={cardObj.text}
-        />
-      ))}
+      {console.log({ cardData })}
+      {cardData.length > 0 ? (
+        cardData.map((cardObj) => (
+          <HeroCard
+            key={cardObj.value}
+            social={cardObj.social}
+            username={cardObj.username}
+            value={cardObj.value}
+            delta={cardObj.delta}
+            text={cardObj.text}
+          />
+        ))
+      ) : (
+        <>
+          <SpinnerWrapper>
+            <SpanSpinner />
+          </SpinnerWrapper>
+        </>
+      )}
     </Grid>
   );
 }

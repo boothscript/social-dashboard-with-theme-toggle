@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
 import themes from "./Theme";
@@ -6,7 +6,6 @@ import Header from "./Components/Header";
 import { Grid } from "./App.styled";
 import HeroStats from "./Containers/HeroStats";
 import Stats from "./Containers/Stats";
-import { followTotal, heroStats, stats } from "./Data/data";
 
 const LIGHT = "light";
 const DARK = "dark";
@@ -17,6 +16,19 @@ function App() {
   function toggleTheme() {
     setTheme((prevTheme) => (prevTheme === LIGHT ? DARK : LIGHT));
   }
+  const [heroStats, setHeroStats] = useState([]);
+  const [stats, setStats] = useState([]);
+  const [followTotal, setFollowTotal] = useState();
+
+  useEffect(() => {
+    fetch("/api/stats")
+      .then((res) => res.json())
+      .then(({ stats, heroStats, followTotal }) => {
+        setHeroStats(heroStats);
+        setStats(stats);
+        setFollowTotal(followTotal);
+      });
+  }, []);
 
   return (
     <ThemeProvider theme={themes[theme]}>

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import StatCard from "../Components/StatCard";
 import { Grid } from "./Grid.styled";
+import SpanSpinner, { SpinnerWrapper } from "../Components/SpanSpinner";
 
 const Header = styled.h3`
   color: ${(props) => props.theme.textLight};
@@ -16,15 +17,22 @@ function Stats({ cardData }) {
   return (
     <Grid>
       <Header> Overview - Today</Header>
-      {cardData.map((cardObj) => (
-        <StatCard
-          key={cardObj.value}
-          social={cardObj.social}
-          statName={cardObj.statName}
-          value={cardObj.value}
-          delta={cardObj.delta}
-        />
-      ))}
+
+      {cardData.length > 0 ? (
+        cardData.map((cardObj) => (
+          <StatCard
+            key={cardObj.value}
+            social={cardObj.social}
+            statName={cardObj.statName}
+            value={cardObj.value}
+            delta={cardObj.delta}
+          />
+        ))
+      ) : (
+        <SpinnerWrapper>
+          <SpanSpinner />
+        </SpinnerWrapper>
+      )}
     </Grid>
   );
 }
