@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import "./App.css";
 
 import themes from "./Theme";
 import Header from "./Components/Header";
