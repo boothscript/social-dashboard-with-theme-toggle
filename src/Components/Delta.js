@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const DeltaText = styled.p`
   font-weight: 700;
@@ -22,5 +23,10 @@ function Delta({ delta, suffix }) {
     </>
   );
 }
+
+Delta.propTypes = {
+  delta: PropTypes.number.isRequired,
+  suffix: PropTypes.string.isRequired,
+};
 
 export default Delta;
