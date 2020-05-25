@@ -10,7 +10,7 @@ import {
   ThemeSwitch,
 } from "./Header.styled";
 
-function Header({ followStat, toggleState, toggleFunc }) {
+function Header({ followStat, toggleState, toggleFunc, toggleTypes }) {
   return (
     <Div>
       <TitleWrap>
@@ -22,7 +22,7 @@ function Header({ followStat, toggleState, toggleFunc }) {
         <label id="pseudo-switch" style={{ position: "relative" }}>
           <ThemeSwitch
             type="checkbox"
-            checked={toggleState === "dark"}
+            checked={toggleState === toggleTypes.DARK}
             onChange={toggleFunc}
           />
           <span />

@@ -9,11 +9,14 @@ import HeroStats from "./Containers/HeroStats";
 import Stats from "./Containers/Stats";
 import { followTotal, heroStats, stats } from "./Data/data";
 
+const LIGHT = "light";
+const DARK = "dark";
+
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(LIGHT);
 
   function toggleTheme() {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (prevTheme === LIGHT ? DARK : LIGHT));
   }
 
   return (
@@ -23,6 +26,7 @@ function App() {
           followStat={followTotal}
           toggleFunc={toggleTheme}
           toggleState={theme}
+          toggleTypes={{ LIGHT, DARK }}
         />
         <HeroStats cardData={heroStats} />
         <Stats cardData={stats} />
