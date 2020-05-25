@@ -8,7 +8,6 @@ import SpanSpinner, { SpinnerWrapper } from "../Components/SpanSpinner";
 function HeroStats({ cardData }) {
   return (
     <Grid>
-      {console.log({ cardData })}
       {cardData.length > 0 ? (
         cardData.map((cardObj) => (
           <HeroCard
