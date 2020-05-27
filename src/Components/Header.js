@@ -17,12 +17,17 @@ function Header({ followStat, toggleState, toggleFunc, toggleTypes }) {
     <Div>
       <TitleWrap>
         <Title>Social Media Dashboard</Title>
-        <SubTitle>Total Followers: {followStat || <SpanSpinner />}</SubTitle>
+        <SubTitle>
+          Total Followers: {followStat || <SpanSpinner alt="loading" />}
+        </SubTitle>
       </TitleWrap>
       <ToggleThemeWrap>
-        <Label>Dark Mode</Label>
+        <Label>
+          {toggleState === toggleTypes.DARK ? "Light" : "Dark"} Mode
+        </Label>
         <label id="pseudo-switch" style={{ position: "relative" }}>
           <ThemeSwitch
+            role="switch"
             type="checkbox"
             checked={toggleState === toggleTypes.DARK}
             onChange={toggleFunc}

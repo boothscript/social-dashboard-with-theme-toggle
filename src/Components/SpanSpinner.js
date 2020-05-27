@@ -35,8 +35,18 @@ const Span = styled.span`
   }
 `;
 
+const AccessabilityMessage = styled.span`
+  position: absolute;
+  visibility: hidden;
+`;
+
 function SpanSpinner({ color }) {
-  return <Span></Span>;
+  return (
+    <>
+      <Span role="alert" aria-live="assertive"></Span>
+      <AccessabilityMessage>Content is loading...</AccessabilityMessage>
+    </>
+  );
 }
 
 // wrapper for Grids
