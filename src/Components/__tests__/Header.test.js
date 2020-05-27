@@ -1,9 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
 
 import Header from "../Header";
-import themes from "../../Theme";
 
 const toggleTypes = {
   LIGHT: "light",
